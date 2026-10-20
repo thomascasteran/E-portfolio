@@ -1,5 +1,7 @@
 (function () {
   const D = window.DATA, $ = (id) => document.getElementById(id);
+  const showError = (msg) => { const b = document.createElement("div"); b.className = "errbox"; b.textContent = msg; document.body.prepend(b); };
+  if (!window.DATA) { showError("⚠ data.js n'a pas pu être chargé (virgule, guillemet ou accolade manquant ?). Détail : " + (window.__errs || []).join(" | ")); return; }
   const UI = {
     en: { skip: "Skip to content", hello: "Hello, I'm", welcome: "Welcome", engineering: "Engineering", mobility: "Mobility", engagement: "Civic engagement", engineeringT: "Engineering courses & projects", careerT: "Career development",
       activities: "Sport & interests", career: "Career", contact: "Contact", other: "FR", otherLabel: "Version française",
@@ -10,7 +12,7 @@
       cvFr: "Download CV (French)", linkedin: "My LinkedIn profile", pastExp: "Past experience", roleModels: "Role models",
       roleModelsSub: "Analysis of 3 inspiring profiles and 3 potential mobility projects.", mobProjects: "Potential mobility projects",
       aligned: "Aligned with", pitch: "Elevator pitch", pitchSub: "2–3 minutes in English: present, brief past, future.",
-      result: "Result", learned: "What I learned", email: "Email", phone: "Phone", portrait: "Portrait of ", docs: "Documents", pPresent: "Present", pPast: "Brief past", pFuture: "Future", videoSoon: "Video coming soon", videoSoonSub: "My 2–3 minute elevator pitch will appear here." },
+      result: "Result", learned: "What I learned", email: "Email", phone: "Phone", portrait: "Portrait of ", docs: "Documents", pPresent: "Present", pPast: "Brief past", pFuture: "Future", videoSoon: "Video coming soon", videoSoonSub: "My 2–3 minute elevator pitch will appear here.", report: "Internship report (PDF)", close: "Close", prev: "Previous", next: "Next" },
     fr: { skip: "Aller au contenu", hello: "Bonjour, je suis", welcome: "Accueil", engineering: "Ingénierie", mobility: "Mobilité", engagement: "Engagement citoyen", engineeringT: "Parcours & projets d'ingénieur", careerT: "Développement de carrière",
       activities: "Sport & centres d'intérêt", career: "Carrière", contact: "Contact", other: "EN", otherLabel: "English version",
       engineeringSub: "Projets et compétences de mon cursus ingénieur.", mobilitySub: "Langues et aspirations à l'international.",
@@ -20,7 +22,7 @@
       cvFr: "Télécharger le CV (français)", linkedin: "Mon profil LinkedIn", pastExp: "Expériences passées", roleModels: "Modèles inspirants",
       roleModelsSub: "Analyse de 3 profils inspirants et de 3 projets de mobilité potentiels.", mobProjects: "Projets de mobilité potentiels",
       aligned: "Aligné avec", pitch: "Elevator pitch", pitchSub: "2–3 minutes en anglais : présent, passé très bref, futur.",
-      result: "Résultat", learned: "Ce que j'ai appris", email: "E-mail", phone: "Téléphone", portrait: "Portrait de ", docs: "Documents", pPresent: "Présent", pPast: "Passé (bref)", pFuture: "Futur", videoSoon: "Vidéo bientôt disponible", videoSoonSub: "Mon elevator pitch de 2 à 3 minutes apparaîtra ici." }
+      result: "Résultat", learned: "Ce que j'ai appris", email: "E-mail", phone: "Téléphone", portrait: "Portrait de ", docs: "Documents", pPresent: "Présent", pPast: "Passé (bref)", pFuture: "Futur", videoSoon: "Vidéo bientôt disponible", videoSoonSub: "Mon elevator pitch de 2 à 3 minutes apparaîtra ici.", report: "Rapport de stage (PDF)", close: "Fermer", prev: "Précédente", next: "Suivante" }
   };
   let lang = "en";
   try { lang = localStorage.getItem("lang") || (navigator.language || "en").slice(0, 2); } catch (e) { lang = (navigator.language || "en").slice(0, 2); }
@@ -45,9 +47,28 @@
   const item = (x) => el("article", { class: "item" }, [el("h4", {}, t(x.title)), ...paras(x.text)]);
   const body = (id, kids) => $(id).replaceChildren(...kids.flat().filter(Boolean));
   const embed = (url) => { const m = String(url || "").match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/); return m ? "https://www.youtube.com/embed/" + m[1] : url; };
+  const gallery = (list) => (list && list.length) ? el("div", { class: "gallery" }, list.map((ph) => {
+    const o = typeof ph === "string" ? { src: ph } : ph, cap = t(o.caption || "");
+    const img = el("img", { src: o.src, alt: cap, loading: "lazy" });
+    img.onerror = () => btn.remove();
+    const btn = el("button", { type: "button", class: "thumb", "data-cap": cap, "aria-label": cap || "Photo" }, [img, cap ? el("span", { class: "cap" }, cap) : null]);
+    return btn;
+  })) : null;
+  const actions = (x) => {
+    const items = [];
+    if (x.report) {
+      const r = a(x.report, u("report"), "btn solid"); items.push(r);
+      if (typeof fetch === "function" && !/^https?:/.test(x.report)) fetch(x.report, { method: "HEAD" }).then((res) => { if (res.status === 404) r.remove(); }).catch(() => {});
+    }
+    (x.links || []).forEach((l) => items.push(a(l.href, t(l.label), "btn")));
+    return items.length ? el("p", { class: "actions" }, items) : null;
+  };
   const initials = (s) => s.replace(/[\[\]]/g, "").split(" ").map((w) => w[0]).join("").slice(0, 2).toUpperCase();
 
   function render() {
+    try { renderInner(); } catch (e) { showError("⚠ Erreur dans le site : " + e.message + " " + (window.__errs || []).join(" | ")); }
+  }
+  function renderInner() {
     requestAnimationFrame(reveal);
     document.documentElement.lang = lang;
     document.querySelectorAll("[data-i18n]").forEach((n) => (n.textContent = u(n.dataset.i18n)));
@@ -76,7 +97,7 @@
 
     body("mobility-body", [head("mobility"),
       grid("langs", m.languages.map((l) => el("span", { class: "chip" }, [el("strong", {}, t(l.name)), " " + t(l.level)]))),
-      sub(u("experiences")), ...m.experiences.map((x) => card([el("h4", {}, t(x.title)), el("p", { class: "meta" }, t(x.period)), ...paras(x.text)], "card xpcard")),
+      sub(u("experiences")), ...m.experiences.map((x) => card([el("h4", {}, t(x.title)), el("p", { class: "meta" }, t(x.period)), ...paras(x.text), gallery(x.photos)], "card xpcard")),
       sub(u("mobGoal")), grid("prose", paras(m.text))]);
 
     body("engagement-body", [head("engagement"), grid("grid2", D.engagement.map(item))]);
@@ -102,7 +123,7 @@
       ...c.experiences.map((x) => card([el("div", { class: "xp" }, [
         x.logo ? el("img", { src: x.logo, alt: "", class: "logo-img" }) : el("span", { class: "logo-img ph" }, initials(x.org || t(x.title))),
         el("div", {}, [el("div", { class: "xp-top" }, [el("h4", {}, t(x.title)), el("span", { class: "meta" }, t(x.period))]),
-          el("p", { class: "org" }, t(x.org)), ...paras(x.text), list(x.bullets), tags(x.tools)])])], "card xpcard"))]);
+          el("p", { class: "org" }, t(x.org)), ...paras(x.text), list(x.bullets), tags(x.tools), actions(x), gallery(x.photos)])])], "card xpcard"))]);
 
     body("contact-body", [head("contact"), grid("grid3", [
       card([el("h4", {}, u("email")), el("p", {}, a("mailto:" + k.email, k.email))], "item"),
@@ -142,4 +163,39 @@
       if (ti) { ti.classList.remove("pulse"); void ti.offsetWidth; ti.classList.add("pulse"); }
     }, 450);
   }));
+
+  /* ---- photo lightbox ---- */
+  const lb = el("div", { class: "lb" }, [
+    el("button", { type: "button", class: "lb-btn lb-x" }, "×"),
+    el("button", { type: "button", class: "lb-btn lb-prev" }, "‹"),
+    el("figure", {}, [el("img", { alt: "" }), el("figcaption", {})]),
+    el("button", { type: "button", class: "lb-btn lb-next" }, "›")]);
+  lb.hidden = true; document.body.append(lb);
+  let shots = [], cur = 0;
+  const show = (i) => {
+    cur = (i + shots.length) % shots.length;
+    const im = lb.querySelector("img"); im.src = shots[cur].src; im.alt = shots[cur].cap;
+    lb.querySelector("figcaption").textContent = shots[cur].cap;
+    lb.querySelector(".lb-x").setAttribute("aria-label", u("close"));
+    lb.querySelector(".lb-prev").setAttribute("aria-label", u("prev"));
+    lb.querySelector(".lb-next").setAttribute("aria-label", u("next"));
+    lb.classList.toggle("single", shots.length < 2);
+  };
+  const closeLb = () => { lb.hidden = true; document.body.style.overflow = ""; };
+  document.addEventListener("click", (e) => {
+    const th = e.target.closest(".thumb");
+    if (th) {
+      const all = [...th.parentElement.querySelectorAll(".thumb")];
+      shots = all.map((b) => ({ src: b.querySelector("img").src, cap: b.dataset.cap }));
+      lb.hidden = false; document.body.style.overflow = "hidden"; show(all.indexOf(th)); return;
+    }
+    if (lb.hidden) return;
+    if (e.target.closest(".lb-prev")) show(cur - 1);
+    else if (e.target.closest(".lb-next")) show(cur + 1);
+    else if (!e.target.closest("figure") || e.target.closest(".lb-x")) closeLb();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (lb.hidden) return;
+    if (e.key === "Escape") closeLb(); else if (e.key === "ArrowLeft") show(cur - 1); else if (e.key === "ArrowRight") show(cur + 1);
+  });
 })();
