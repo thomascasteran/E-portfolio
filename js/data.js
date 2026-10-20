@@ -43,8 +43,8 @@ window.DATA = {
   mobility: {
     languages: [
       { name: B("English", "Anglais"), level: "B2" },
-      { name: B("German", "Allemand"), level: "A2-B1" }
-       { name: B("Spanish", "Espagnol"), level: "A1" }
+      { name: B("German", "Allemand"), level: "A2-B1" },
+      { name: B("Spanish", "Espagnol"), level: "A1" }
     ],
     experiences: [
       {
@@ -81,8 +81,6 @@ window.DATA = {
     }
   ],
   activities: [
-    {
-activities: [
     {
       category: B("Music & Media", "Musique & Média"),
       items: [
