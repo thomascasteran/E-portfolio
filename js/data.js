@@ -58,19 +58,34 @@ window.DATA = {
         title: B("Language Immersion – Ireland", "Immersion linguistique – Irlande"),
         period: B("2025 (2 weeks)", "2025 (2 semaines)"),
         text: B("Language courses and cultural discovery in Ireland to refine fluency and autonomy in an English-speaking environment.",
-                "Cours de langues et immersion culturelle en Irlande pour perfectionner l'anglais et renforcer l'autonomie à l'étranger.")
+                "Cours de langues et immersion culturelle en Irlande pour perfectionner l'anglais et renforcer l'autonomie à l'étranger."),
+        // PHOTOS : dépose tes images dans assets/img/ avec ces noms (ou change les noms). Si un fichier n'existe pas, la photo est simplement ignorée.
+        photos: [
+          { src: "assets/img/irlande-1.jpg", caption: B("[City]", "[Ville]") },   // ← change la légende
+          { src: "assets/img/irlande-2.jpg", caption: B("[City]", "[Ville]") },
+          { src: "assets/img/irlande-3.jpg", caption: B("[City]", "[Ville]") }
+        ]
       },
       {
         title: B("Language Immersion – Malta", "Immersion linguistique – Malte"),
         period: B("2024 (2 weeks)", "2024 (2 semaines)"),
         text: B("Daily communication and cultural immersion in Malta.",
-                "Pratique quotidienne de l'anglais et adaptation rapide à un cadre multiculturel à Malte.")
+                "Pratique quotidienne de l'anglais et adaptation rapide à un cadre multiculturel à Malte."),
+        photos: [
+          { src: "assets/img/malte-1.jpg", caption: B("[City]", "[Ville]") },
+          { src: "assets/img/malte-2.jpg", caption: B("[City]", "[Ville]") },
+          { src: "assets/img/malte-3.jpg", caption: B("[City]", "[Ville]") }
+        ]
       },
       {
         title: B("Manchester City Football Camp", "Camp de football – Manchester City"),
         period: "2022",
         text: B("High-level sports training combined with daily English language practice in England.",
-                "Entraînement sportif intensif de haut niveau combiné à une pratique quotidienne de l'anglais en Angleterre.")
+                "Entraînement sportif intensif de haut niveau combiné à une pratique quotidienne de l'anglais en Angleterre."),
+        photos: [
+          { src: "assets/img/manchester-1.jpg", caption: B("Manchester", "Manchester") },
+          { src: "assets/img/manchester-2.jpg", caption: B("Manchester", "Manchester") }
+        ]
       }
     ],
     text: [
@@ -156,7 +171,10 @@ window.DATA = {
           B("Automated spreadsheet reading and queries using Pandas to process test records.", "Automatisation de la lecture et des requêtes de bases de données avec Pandas."),
           B("Accelerated data access for researchers conducting high-temperature material testing.", "Accélération de l'accès aux données pour les chercheurs analysant les matériaux à haute température.")
         ],
-        tools: ["Python", "PyQt", "Pandas", "Qt Designer", "Git"]
+        tools: ["Python", "PyQt", "Pandas", "Qt Designer", "Git"],
+        // BOUTON RAPPORT : dépose ton PDF dans assets/docs/ avec ce nom. Le bouton apparaît tout seul une fois le fichier en ligne.
+        report: "assets/docs/rapport-onera.pdf"
+        // Autres boutons possibles : links: [ { label: B("Poster", "Poster"), href: "assets/docs/poster.pdf" } ]
       },
       {
         title: B("Cadet of the Gendarmerie", "Cadet de la Gendarmerie"),
