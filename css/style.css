@@ -132,3 +132,4 @@ footer{margin-top:5rem;padding:2.5rem 1rem;text-align:center;color:var(--muted);
 .lb-btn:hover{background:rgba(255,255,255,.3)}
 .lb-x{top:1rem;right:1rem}.lb-prev{left:1rem;top:50%}.lb-next{right:1rem;top:50%}
 .lb.single .lb-prev,.lb.single .lb-next{display:none}
+.gallery:has(> .thumb:only-child){grid-template-columns:minmax(0,24rem)}
