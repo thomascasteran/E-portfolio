@@ -40,7 +40,7 @@ window.DATA = {
         tools: ["LaTeX", "Python", "Physical Measurements", "Solar Energy"],
         link: "",
         linkLabel: B("View project", "Voir le projet"),
-        image: ""
+        image: "assets/img/projet-solaire.jpg"
       }
       /* Pour ajouter un projet : mets une virgule après le } ci-dessus, puis copie le bloc entier. */
     ]
