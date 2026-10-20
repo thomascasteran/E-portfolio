@@ -59,11 +59,9 @@ window.DATA = {
         period: B("2025 (2 weeks)", "2025 (2 semaines)"),
         text: B("Language courses and cultural discovery in Ireland to refine fluency and autonomy in an English-speaking environment.",
                 "Cours de langues et immersion culturelle en Irlande pour perfectionner l'anglais et renforcer l'autonomie à l'étranger."),
-        // PHOTOS : dépose tes images dans assets/img/ avec ces noms (ou change les noms). Si un fichier n'existe pas, la photo est simplement ignorée.
+        // PHOTO : dépose ton image dans assets/img/ avec exactement ce nom (en minuscules, .jpg).
         photos: [
-          { src: "assets/img/irlande-1.jpg", caption: B("Dublin", "Dublin") },   // ← change la légende
-          { src: "assets/img/irlande-2.jpg", caption: B("[City]", "[Ville]") },
-          { src: "assets/img/irlande-3.jpg", caption: B("[City]", "[Ville]") }
+          { src: "assets/img/irlande-dublin.jpg", caption: B("Dublin", "Dublin") }
         ]
       },
       {
@@ -72,9 +70,7 @@ window.DATA = {
         text: B("Daily communication and cultural immersion in Malta.",
                 "Pratique quotidienne de l'anglais et adaptation rapide à un cadre multiculturel à Malte."),
         photos: [
-          { src: "assets/img/malte-1.jpg", caption: B("[City]", "[Ville]") },
-          { src: "assets/img/malte-2.jpg", caption: B("[City]", "[Ville]") },
-          { src: "assets/img/malte-3.jpg", caption: B("[City]", "[Ville]") }
+          { src: "assets/img/malte-la-valette.jpg", caption: B("Valletta", "La Valette") }
         ]
       },
       {
@@ -83,8 +79,7 @@ window.DATA = {
         text: B("High-level sports training combined with daily English language practice in England.",
                 "Entraînement sportif intensif de haut niveau combiné à une pratique quotidienne de l'anglais en Angleterre."),
         photos: [
-          { src: "assets/img/manchester-1.jpg", caption: B("Manchester", "Manchester") },
-          { src: "assets/img/manchester-2.jpg", caption: B("Manchester", "Manchester") }
+          { src: "assets/img/manchester.jpg", caption: B("Manchester", "Manchester") }
         ]
       }
     ],
