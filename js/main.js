@@ -63,6 +63,13 @@
     (x.links || []).forEach((l) => items.push(a(l.href, t(l.label), "btn")));
     return items.length ? el("p", { class: "actions" }, items) : null;
   };
+  const projMedia = (x) => {
+    const tile = () => el("div", { class: "tilecap" }, [el("span", {}, t(x.period)), el("span", {}, t(x.type))]);
+    if (!x.image) return tile();
+    const img = el("img", { src: x.image, alt: t(x.title), class: "shot", loading: "lazy" });
+    img.onerror = () => img.replaceWith(tile());   // si l'image est introuvable, on garde la tuile colorée
+    return img;
+  };
   const initials = (s) => s.replace(/[\[\]]/g, "").split(" ").map((w) => w[0]).join("").slice(0, 2).toUpperCase();
 
   function render() {
@@ -88,7 +95,7 @@
     body("engineering-body", [head("engineering"), sub(u("skills")),
       grid("grid3", e.skills.map((s) => card([el("h4", {}, t(s.group)), tags(s.items)]))), sub(u("projects")),
       grid("stack", e.projects.map((x) => card([el("div", { class: "proj" }, [
-        x.image ? el("img", { src: x.image, alt: "", class: "shot", loading: "lazy" }) : el("div", { class: "tilecap" }, [el("span", {}, t(x.period)), el("span", {}, t(x.type))]),
+        projMedia(x),
         el("div", { class: "pad" }, [el("p", { class: "meta" }, [t(x.type), t(x.period)].filter(Boolean).join(" · ")),
           el("h4", {}, t(x.title)), ...paras(x.text),
           x.result ? el("p", {}, [el("strong", {}, u("result") + ": "), t(x.result)]) : null,
