@@ -82,7 +82,9 @@ window.DATA = {
   ],
   activities: [
     {
-      category: B("Music", "Musique"),
+activities: [
+    {
+      category: B("Music & Media", "Musique & Média"),
       items: [
         {
           title: B("Piano & Viola (Conservatoire)", "Piano & Alto (Conservatoire)"),
@@ -93,6 +95,16 @@ window.DATA = {
           title: B("Music Band", "Groupe de musique"),
           text: B("Playing music collectively in a band, sharing live performances and arrangements.",
                  "Pratique musicale en groupe, partage de performances live et arrangements.")
+        },
+        {
+          title: B("Film Soundtrack Composition", "Composition de bande originale de film"),
+          text: B("Composed an original soundtrack piece for the feature film 'Une Étoile à son nom' directed by Matthieu Gerbaud and Mathieu Louit.",
+                 "Composition d'un morceau original pour la bande originale du long-métrage 'Une Étoile à son nom' (réalisé par Matthieu Gerbaud et Mathieu Louit).")
+        },
+        {
+          title: B("TV Appearance for KiKa (German Channel)", "Intervention TV pour KiKa (Chaîne allemande)"),
+          text: B("Participated in an educational treasure hunt show filmed in Toulouse for German TV channel KiKa. Presented iconic spots of the city (Airbus, Cité de l'Espace, city center).",
+                 "Participation au tournage d'une émission jeunesse à Toulouse pour la chaîne allemande KiKa. Présentation des sites phares de la ville (Airbus, Cité de l'Espace, centre-ville).")
         }
       ]
     },
