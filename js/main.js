@@ -1,8 +1,8 @@
 (function () {
   const D = window.DATA, $ = (id) => document.getElementById(id);
   const UI = {
-    en: { skip: "Skip to content", hello: "Hello, I'm", welcome: "Home", engineering: "Engineering", mobility: "Mobility", engagement: "Engagement",
-      activities: "Activities", career: "Career", contact: "Contact", other: "FR", otherLabel: "Version française",
+    en: { skip: "Skip to content", hello: "Hello, I'm", welcome: "Welcome", engineering: "Engineering", mobility: "Mobility", engagement: "Civic engagement", engineeringT: "Engineering courses & projects", careerT: "Career development",
+      activities: "Sport & interests", career: "Career", contact: "Contact", other: "FR", otherLabel: "Version française",
       engineeringSub: "Projects and skills from my engineering course.", mobilitySub: "Languages and international aspirations.",
       engagementSub: "Sustainability, community and civic involvement.", activitiesSub: "Sport and passions outside engineering.",
       careerSub: "Professional documents, goals and sources of inspiration.", contactSub: "Get in touch for an internship, a project or a simple chat.",
@@ -10,9 +10,9 @@
       cvFr: "Download CV (French)", linkedin: "My LinkedIn profile", pastExp: "Past experience", roleModels: "Role models",
       roleModelsSub: "Analysis of 3 inspiring profiles and 3 potential mobility projects.", mobProjects: "Potential mobility projects",
       aligned: "Aligned with", pitch: "Elevator pitch", pitchSub: "2–3 minutes in English: present, brief past, future.",
-      result: "Result", learned: "What I learned", email: "Email", phone: "Phone", portrait: "Portrait of " },
-    fr: { skip: "Aller au contenu", hello: "Bonjour, je suis", welcome: "Accueil", engineering: "Ingénierie", mobility: "Mobilité", engagement: "Engagement",
-      activities: "Activités", career: "Carrière", contact: "Contact", other: "EN", otherLabel: "English version",
+      result: "Result", learned: "What I learned", email: "Email", phone: "Phone", portrait: "Portrait of ", docs: "Documents", pPresent: "Present", pPast: "Brief past", pFuture: "Future", videoSoon: "Video coming soon", videoSoonSub: "My 2–3 minute elevator pitch will appear here." },
+    fr: { skip: "Aller au contenu", hello: "Bonjour, je suis", welcome: "Accueil", engineering: "Ingénierie", mobility: "Mobilité", engagement: "Engagement citoyen", engineeringT: "Parcours & projets d'ingénieur", careerT: "Développement de carrière",
+      activities: "Sport & centres d'intérêt", career: "Carrière", contact: "Contact", other: "EN", otherLabel: "English version",
       engineeringSub: "Projets et compétences de mon cursus ingénieur.", mobilitySub: "Langues et aspirations à l'international.",
       engagementSub: "Développement durable, vie associative et citoyenne.", activitiesSub: "Sport et passions en dehors de l'ingénierie.",
       careerSub: "Documents professionnels, objectifs et sources d'inspiration.", contactSub: "Écris-moi pour un stage, un projet ou un simple échange.",
@@ -20,7 +20,7 @@
       cvFr: "Télécharger le CV (français)", linkedin: "Mon profil LinkedIn", pastExp: "Expériences passées", roleModels: "Modèles inspirants",
       roleModelsSub: "Analyse de 3 profils inspirants et de 3 projets de mobilité potentiels.", mobProjects: "Projets de mobilité potentiels",
       aligned: "Aligné avec", pitch: "Elevator pitch", pitchSub: "2–3 minutes en anglais : présent, passé très bref, futur.",
-      result: "Résultat", learned: "Ce que j'ai appris", email: "E-mail", phone: "Téléphone", portrait: "Portrait de " }
+      result: "Résultat", learned: "Ce que j'ai appris", email: "E-mail", phone: "Téléphone", portrait: "Portrait de ", docs: "Documents", pPresent: "Présent", pPast: "Passé (bref)", pFuture: "Futur", videoSoon: "Vidéo bientôt disponible", videoSoonSub: "Mon elevator pitch de 2 à 3 minutes apparaîtra ici." }
   };
   let lang = "en";
   try { lang = localStorage.getItem("lang") || (navigator.language || "en").slice(0, 2); } catch (e) { lang = (navigator.language || "en").slice(0, 2); }
@@ -38,12 +38,13 @@
   const tags = (arr) => (arr && arr.length) ? el("ul", { class: "tags" }, arr.map((x) => el("li", {}, t(x)))) : null;
   const list = (arr) => (arr && arr.length) ? el("ul", { class: "bullets" }, arr.map((x) => el("li", {}, t(x)))) : null;
   const paras = (v) => v ? [].concat(v).map((x) => el("p", {}, t(x))) : [];
-  const head = (k) => [el("h2", { class: "title" }, u(k)), el("p", { class: "sub" }, u(k + "Sub"))];
+  const head = (k) => [el("h2", { class: "title" }, u(k + "T") || u(k)), el("p", { class: "sub" }, u(k + "Sub"))];
   const sub = (txt) => el("h3", { class: "h3" }, txt);
   const grid = (cls, kids) => el("div", { class: cls + " tg" }, kids);
   const card = (kids, cls = "card") => el("article", { class: cls }, kids);
   const item = (x) => el("article", { class: "item" }, [el("h4", {}, t(x.title)), ...paras(x.text)]);
   const body = (id, kids) => $(id).replaceChildren(...kids.flat().filter(Boolean));
+  const embed = (url) => { const m = String(url || "").match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/); return m ? "https://www.youtube.com/embed/" + m[1] : url; };
   const initials = (s) => s.replace(/[\[\]]/g, "").split(" ").map((w) => w[0]).join("").slice(0, 2).toUpperCase();
 
   function render() {
@@ -81,13 +82,15 @@
     body("engagement-body", [head("engagement"), grid("grid2", D.engagement.map(item))]);
     body("activities-body", [head("activities"), ...D.activities.map((g) => [sub(t(g.category)), grid("grid2", g.items.map(item))])]);
 
+    let media;
+    if (c.videoFile) media = el("div", { class: "video" }, el("video", { src: c.videoFile, controls: "", preload: "metadata", playsinline: "" }));
+    else if (c.video && !c.video.includes("[")) media = el("div", { class: "video" }, el("iframe", { src: embed(c.video), title: "Elevator pitch", allowfullscreen: "", loading: "lazy" }));
+    else media = el("div", { class: "video vidph" }, [el("strong", {}, u("videoSoon")), el("span", {}, u("videoSoonSub"))]);
+
     body("career-body", [head("career"),
+      sub(u("docs")),
       el("p", { class: "cta" }, [a(c.cv.en, u("cvEn"), "btn solid"), a(c.cv.fr, u("cvFr"), "btn sky"), a(p.linkedin, u("linkedin"), "btn")]),
-      sub(u("pastExp")),
-      ...c.experiences.map((x) => card([el("div", { class: "xp" }, [
-        x.logo ? el("img", { src: x.logo, alt: "", class: "logo-img" }) : el("span", { class: "logo-img ph" }, initials(x.org || t(x.title))),
-        el("div", {}, [el("div", { class: "xp-top" }, [el("h4", {}, t(x.title)), el("span", { class: "meta" }, t(x.period))]),
-          el("p", { class: "org" }, t(x.org)), ...paras(x.text), list(x.bullets), tags(x.tools)])])], "card xpcard")),
+      sub(u("pitch")), el("p", { class: "sub tight" }, u("pitchSub")), tags([u("pPresent"), u("pPast"), u("pFuture")]), media,
       sub(u("roleModels")), el("p", { class: "sub tight" }, u("roleModelsSub")),
       grid("grid3", c.roleModels.map((r) => card([
         r.photo ? el("img", { src: r.photo, alt: r.name, class: "avatar-sm" }) : el("span", { class: "avatar-sm ph" }, initials(r.name)),
@@ -95,12 +98,15 @@
       sub(u("mobProjects")),
       grid("grid3", c.mobilityProjects.map((x) => card([el("h4", {}, t(x.title)), el("p", { class: "meta" }, t(x.place)),
         x.roleModel ? el("p", {}, [el("strong", {}, u("aligned") + ": "), x.roleModel]) : null, ...paras(x.text)]))),
-      c.video.includes("[") ? null : [sub(u("pitch")), el("p", { class: "sub tight" }, u("pitchSub")),
-        el("div", { class: "video" }, el("iframe", { src: c.video, title: "Elevator pitch", allowfullscreen: "", loading: "lazy" }))]]);
+      sub(u("pastExp")),
+      ...c.experiences.map((x) => card([el("div", { class: "xp" }, [
+        x.logo ? el("img", { src: x.logo, alt: "", class: "logo-img" }) : el("span", { class: "logo-img ph" }, initials(x.org || t(x.title))),
+        el("div", {}, [el("div", { class: "xp-top" }, [el("h4", {}, t(x.title)), el("span", { class: "meta" }, t(x.period))]),
+          el("p", { class: "org" }, t(x.org)), ...paras(x.text), list(x.bullets), tags(x.tools)])])], "card xpcard"))]);
 
     body("contact-body", [head("contact"), grid("grid3", [
       card([el("h4", {}, u("email")), el("p", {}, a("mailto:" + k.email, k.email))], "item"),
-      card([el("h4", {}, u("phone")), el("p", {}, a("tel:" + k.phone.replace(/\s/g, ""), k.phone))], "item"),
+      k.phone ? card([el("h4", {}, u("phone")), el("p", {}, a("tel:" + k.phone.replace(/\s/g, ""), k.phone))], "item") : null,
       card([el("h4", {}, "LinkedIn"), el("p", {}, a(k.linkedin, u("linkedin")))], "item")])]);
   }
 
