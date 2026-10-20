@@ -61,7 +61,7 @@ window.DATA = {
                 "Cours de langues et immersion culturelle en Irlande pour perfectionner l'anglais et renforcer l'autonomie à l'étranger."),
         // PHOTOS : dépose tes images dans assets/img/ avec ces noms (ou change les noms). Si un fichier n'existe pas, la photo est simplement ignorée.
         photos: [
-          { src: "assets/img/irlande-1.jpg", caption: B("[City]", "[Ville]") },   // ← change la légende
+          { src: "assets/img/irlande-1.jpg", caption: B("Dublin", "Dublin") },   // ← change la légende
           { src: "assets/img/irlande-2.jpg", caption: B("[City]", "[Ville]") },
           { src: "assets/img/irlande-3.jpg", caption: B("[City]", "[Ville]") }
         ]
