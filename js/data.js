@@ -18,7 +18,7 @@ window.DATA = {
   },
   engineering: {
     skills: [
-      { group: B("Languages & Software", "Langages & Logiciels"), items: ["Python", "Pandas", "Matplotlib", "PyQt / PySide", "Qt Designer", "LaTeX", "C", "Linux", "Git"] },
+      { group: B("Languages & Software", "Langages & Logiciels"), items: ["Python", "Pandas", "Matplotlib", "Qt Designer", "LaTeX"] },
       { group: B("Engineering & Physics", "Ingénierie & Physique"), items: [B("Fluid Mechanics", "Mécanique des fluides"), B("Thermodynamics", "Thermodynamique"), B("Data Analysis", "Analyse de données"), B("Physical Measurements", "Mesures physiques")] },
       { group: B("Soft skills", "Savoir-être"), items: [B("Teamwork", "Travail en équipe"), B("Rigor", "Rigueur scientifique"), B("Adaptability", "Adaptabilité"), B("Leadership", "Esprit d'initiative")] }
     ],
@@ -42,8 +42,9 @@ window.DATA = {
   },
   mobility: {
     languages: [
-      { name: B("English", "Anglais"), level: "C1" },
-      { name: B("German", "Allemand"), level: "B1" }
+      { name: B("English", "Anglais"), level: "B2" },
+      { name: B("German", "Allemand"), level: "A2-B1" }
+       { name: B("Spanish", "Espagnol"), level: "A1" }
     ],
     experiences: [
       {
