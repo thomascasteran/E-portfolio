@@ -56,7 +56,7 @@ window.DATA = {
     experiences: [
       {
         title: B("Language Immersion – Ireland", "Immersion linguistique – Irlande"),
-        period: B("2025 (2 weeks)", "2025 (2 semaines)"),
+        period: B("August 2025 (2 weeks)", "Août 2025 (2 semaines)"),
         text: B("Language courses and cultural discovery in Ireland to refine fluency and autonomy in an English-speaking environment.",
                 "Cours de langues et immersion culturelle en Irlande pour perfectionner l'anglais et renforcer l'autonomie à l'étranger."),
         // PHOTO : dépose ton image dans assets/img/ avec exactement ce nom (en minuscules, .jpg).
@@ -66,7 +66,7 @@ window.DATA = {
       },
       {
         title: B("Language Immersion – Malta", "Immersion linguistique – Malte"),
-        period: B("2024 (2 weeks)", "2024 (2 semaines)"),
+        period: B("July 2024 (2 weeks)", "Juillet 2024 (2 semaines)"),
         text: B("Daily communication and cultural immersion in Malta.",
                 "Pratique quotidienne de l'anglais et adaptation rapide à un cadre multiculturel à Malte."),
         photos: [
@@ -75,7 +75,7 @@ window.DATA = {
       },
       {
         title: B("Manchester City Football Camp", "Camp de football – Manchester City"),
-        period: "2022",
+        period: B("August 2022 (2 weeks)","Août 2022 (2 semaines)")
         text: B("High-level sports training combined with daily English language practice in England.",
                 "Entraînement sportif intensif de haut niveau combiné à une pratique quotidienne de l'anglais en Angleterre."),
         photos: [
