@@ -168,7 +168,7 @@ window.DATA = {
         title: B("Cadet of the Gendarmerie", "Cadet de la Gendarmerie"),
         org: "Gendarmerie Nationale, Toulouse",
         period: B("July 2023", "Juillet 2023"),
-        logo: "",
+        logo: "assets/img/gendarmerie.jpg",
         text: B("Discovery of public safety operations, institutional protocols, and team discipline.",
                 "Immersion dans les missions de sécurité publique, découverte de la rigueur institutionnelle et des protocoles d'intervention."),
         bullets: [
@@ -190,7 +190,7 @@ window.DATA = {
         ]
       },
       {
-        name: "Ingénieur R&D Énergies",
+        name: "David Lindqvist",
         job: B("Renewable Energy R&D Engineer", "Ingénieur R&D en Énergies Renouvelables"),
         photo: "",
         points: [
@@ -200,7 +200,7 @@ window.DATA = {
         ]
       },
       {
-        name: "Spécialiste MetOcean",
+        name: "Marc-Antoine Tremblay",
         job: B("MetOcean & Wind Modeling Engineer", "Ingénieur MetOcean & Modélisation des Vents"),
         photo: "",
         points: [
@@ -213,25 +213,25 @@ window.DATA = {
 
     mobilityProjects: [
       {
-        title: B("Academic Exchange in Energetics", "Échange académique en énergétique"),
+        title: B("Academic Exchange in Climate Risk Modeling", "Échange académique – Modélisation des risques climatiques"),
         place: "UiT The Arctic University of Norway (Tromsø, Norvège)",
         roleModel: "Iris Mourier",
-        text: B("Completing a semester focused on advanced fluid dynamics, environmental science, and renewable energy modeling.",
-                "Réalisation d'un semestre axé sur la dynamique des fluides avancée, la science environnementale et la modélisation des énergies renouvelables.")
+        text: B("Completing an academic semester focused on advanced fluid dynamics, arctic climate risk analysis, and environmental modeling.",
+                "Réalisation d'un semestre académique axé sur la dynamique des fluides avancée, l'analyse des risques climatiques arctiques et la modélisation environnementale.")
       },
       {
-        title: B("International R&D Internship", "Stage R&D à l'international"),
+        title: B("Academic Exchange in Energy Engineering", "Échange académique – Ingénierie des énergies"),
         place: "Uppsala University (Uppsala, Suède)",
-        roleModel: "Ingénieur R&D Énergies",
-        text: B("Engineering internship working on fluid/thermal optimization, solar energy, and clean energy systems.",
-                "Stage ingénieur travaillant sur l'optimisation thermo-fluide, l'énergie solaire et les systèmes d'énergie propre.")
+        roleModel: "David Lindqvist",
+        text: B("Completing an academic semester studying fluid/thermal optimization, solar energy integration, and clean energy systems.",
+                "Réalisation d'un semestre académique axé sur l'optimisation thermo-fluide, l'intégration de l'énergie solaire et les systèmes d'énergie propre.")
       },
       {
-        title: B("Climate Risk & Wind Modeling Mission", "Mission modélisation des risques climatiques"),
+        title: B("Academic Exchange in Atmospheric & Wind Dynamics", "Échange académique – Dynamique atmosphérique & vents"),
         place: "Polytechnique Montréal (BCI, Canada)",
-        roleModel: "Spécialiste MetOcean",
-        text: B("Applying numerical wind field modeling and fluid mechanics to catastrophic event prevention and environmental engineering.",
-                "Application de la modélisation numérique des champs de vent et de la mécanique des fluides à la prévention des catastrophes et à l'ingénierie environnementale.")
+        roleModel: "Marc-Antoine Tremblay",
+        text: B("Completing an academic semester applying fluid mechanics and numerical wind modeling to catastrophic event prevention.",
+                "Réalisation d'un semestre académique appliquant la mécanique des fluides et la modélisation numérique des vents à la prévention des catastrophes.")
       }
     ]
   },
