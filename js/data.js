@@ -75,7 +75,7 @@ window.DATA = {
       },
       {
         title: B("Manchester City Football Camp", "Camp de football – Manchester City"),
-        period: B("August 2022 (2 weeks)","Août 2022 (2 semaines)")
+        period: B("August 2022 (2 weeks)","Août 2022 (2 semaines)"),
         text: B("High-level sports training combined with daily English language practice in England.",
                 "Entraînement sportif intensif de haut niveau combiné à une pratique quotidienne de l'anglais en Angleterre."),
         photos: [
