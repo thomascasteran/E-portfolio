@@ -82,8 +82,8 @@ window.DATA = {
       }
     ],
     text: [
-      B("My goal is to complete an academic semester or an engineering R&D internship abroad, focusing on advanced fluid mechanics, renewable energy systems, or computational climate modeling.",
-        "Mon objectif est de réaliser un semestre académique ou un stage R&D à l'étranger, axé sur la mécanique des fluides avancée, les énergies renouvelables ou la modélisation numérique des risques climatiques.")
+      B("My goal is to complete an academic semester focusing on advanced fluid mechanics, renewable energy systems, or computational climate modeling.",
+        "Mon objectif est de réaliser un semestre académique axé sur la mécanique des fluides avancée, les énergies renouvelables ou la modélisation numérique des risques climatiques.")
     ]
   },
 
@@ -221,8 +221,8 @@ window.DATA = {
         place: "Georgia Institute of Technology (Georgia Tech, Atlanta, USA)",
         roleModel: "Iris Mourier",
         text: B(
-          "Potential exchange destination to strengthen my foundations in numerical modeling, fluid dynamics, atmospheric sciences, and data analysis. I would like to explore how physical simulations and climate data can contribute to understanding extreme weather events and natural hazards. Exchange availability and course eligibility must be confirmed with ENSEEIHT.",
-          "Piste d'échange pour renforcer mes bases en modélisation numérique, dynamique des fluides, sciences de l'atmosphère et analyse de données. Je souhaite explorer comment les simulations physiques et les données climatiques permettent de mieux comprendre les événements météorologiques extrêmes et les aléas naturels. La possibilité d'échange et l'accès aux cours doivent être confirmés auprès de l'ENSEEIHT."
+          "Potential exchange destination to strengthen my foundations in numerical modeling, fluid dynamics, atmospheric sciences, and data analysis. I would like to explore how physical simulations and climate data can contribute to understanding extreme weather events and natural hazards.",
+          "Piste d'échange pour renforcer mes bases en modélisation numérique, dynamique des fluides, sciences de l'atmosphère et analyse de données. Je souhaite explorer comment les simulations physiques et les données climatiques permettent de mieux comprendre les événements météorologiques extrêmes et les aléas naturels. "
         )
       },
       {
@@ -233,8 +233,8 @@ window.DATA = {
         place: "University of Connecticut (UConn, USA)",
         roleModel: "Iris Mourier",
         text: B(
-          "Potential exchange destination to develop my knowledge of climate science, statistics, environmental processes, and scientific data analysis. My goal is to build skills that could later be applied to modeling the frequency and intensity of extreme events and assessing their potential impacts. Available courses and exchange arrangements must be checked with ENSEEIHT.",
-          "Piste d'échange pour approfondir mes connaissances en sciences du climat, statistiques, processus environnementaux et analyse de données scientifiques. Mon objectif est d'acquérir des compétences qui pourraient ensuite être appliquées à la modélisation de la fréquence et de l'intensité des événements extrêmes et à l'évaluation de leurs impacts potentiels. Les cours accessibles et les modalités d'échange doivent être vérifiés auprès de l'ENSEEIHT."
+          "Potential exchange destination to develop my knowledge of climate science, statistics, environmental processes, and scientific data analysis. My goal is to build skills that could later be applied to modeling the frequency and intensity of extreme events and assessing their potential impacts.",
+          "Piste d'échange pour approfondir mes connaissances en sciences du climat, statistiques, processus environnementaux et analyse de données scientifiques. Mon objectif est d'acquérir des compétences qui pourraient ensuite être appliquées à la modélisation de la fréquence et de l'intensité des événements extrêmes et à l'évaluation de leurs impacts potentiels."
         )
       },
       {
@@ -245,8 +245,8 @@ window.DATA = {
         place: "Polytechnique Montréal (Montréal, Canada)",
         roleModel: "Marc-Antoine Tremblay",
         text: B(
-          "Potential exchange destination to deepen my knowledge of fluid mechanics, numerical simulation, environmental processes, and scientific computing in a French- and English-speaking international environment. I would like to investigate how these methods can support the study of extreme winds, storms, floods, and other natural hazards. The exchange agreement and relevant course availability must be confirmed with ENSEEIHT.",
-          "Piste d'échange pour approfondir mes connaissances en mécanique des fluides, simulation numérique, processus environnementaux et calcul scientifique dans un environnement international francophone et anglophone. Je souhaite étudier comment ces méthodes peuvent contribuer à l'analyse des vents extrêmes, des tempêtes, des inondations et d'autres aléas naturels. L'accord d'échange et la disponibilité des cours adaptés doivent être confirmés auprès de l'ENSEEIHT."
+          "Potential exchange destination to deepen my knowledge of fluid mechanics, numerical simulation, environmental processes, and scientific computing in a French- and English-speaking international environment. I would like to investigate how these methods can support the study of extreme winds, storms, floods, and other natural hazards. ",
+          "Piste d'échange pour approfondir mes connaissances en mécanique des fluides, simulation numérique, processus environnementaux et calcul scientifique dans un environnement international francophone et anglophone. Je souhaite étudier comment ces méthodes peuvent contribuer à l'analyse des vents extrêmes, des tempêtes, des inondations et d'autres aléas naturels."
         )
       }
     ]
