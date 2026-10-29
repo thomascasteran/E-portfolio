@@ -211,27 +211,43 @@ window.DATA = {
       }
     ],
 
+    /* ---------- MOBILITY PROJECTS — UPDATED ---------- */
     mobilityProjects: [
       {
-        title: B("Academic Exchange in Climate Risk Modeling", "Échange académique – Modélisation des risques climatiques"),
-        place: "UiT The Arctic University of Norway (Tromsø, Norvège)",
+        title: B(
+          "Academic Exchange – Climate & Catastrophe Modeling",
+          "Échange universitaire – Climat & modélisation des catastrophes"
+        ),
+        place: "Georgia Institute of Technology (Georgia Tech, Atlanta, USA)",
         roleModel: "Iris Mourier",
-        text: B("Completing an academic semester focused on advanced fluid dynamics, arctic climate risk analysis, and environmental modeling.",
-                "Réalisation d'un semestre académique axé sur la dynamique des fluides avancée, l'analyse des risques climatiques arctiques et la modélisation environnementale.")
+        text: B(
+          "Potential exchange destination to strengthen my foundations in numerical modeling, fluid dynamics, atmospheric sciences, and data analysis. I would like to explore how physical simulations and climate data can contribute to understanding extreme weather events and natural hazards. Exchange availability and course eligibility must be confirmed with ENSEEIHT.",
+          "Piste d'échange pour renforcer mes bases en modélisation numérique, dynamique des fluides, sciences de l'atmosphère et analyse de données. Je souhaite explorer comment les simulations physiques et les données climatiques permettent de mieux comprendre les événements météorologiques extrêmes et les aléas naturels. La possibilité d'échange et l'accès aux cours doivent être confirmés auprès de l'ENSEEIHT."
+        )
       },
       {
-        title: B("Academic Exchange in Energy Engineering", "Échange académique – Ingénierie des énergies"),
-        place: "Uppsala University (Uppsala, Suède)",
-        roleModel: "David Lindqvist",
-        text: B("Completing an academic semester studying fluid/thermal optimization, solar energy integration, and clean energy systems.",
-                "Réalisation d'un semestre académique axé sur l'optimisation thermo-fluide, l'intégration de l'énergie solaire et les systèmes d'énergie propre.")
+        title: B(
+          "Academic Exchange – Climate Science & Data Analysis",
+          "Échange universitaire – Sciences du climat & analyse de données"
+        ),
+        place: "University of Connecticut (UConn, USA)",
+        roleModel: "Iris Mourier",
+        text: B(
+          "Potential exchange destination to develop my knowledge of climate science, statistics, environmental processes, and scientific data analysis. My goal is to build skills that could later be applied to modeling the frequency and intensity of extreme events and assessing their potential impacts. Available courses and exchange arrangements must be checked with ENSEEIHT.",
+          "Piste d'échange pour approfondir mes connaissances en sciences du climat, statistiques, processus environnementaux et analyse de données scientifiques. Mon objectif est d'acquérir des compétences qui pourraient ensuite être appliquées à la modélisation de la fréquence et de l'intensité des événements extrêmes et à l'évaluation de leurs impacts potentiels. Les cours accessibles et les modalités d'échange doivent être vérifiés auprès de l'ENSEEIHT."
+        )
       },
       {
-        title: B("Academic Exchange in Atmospheric & Wind Dynamics", "Échange académique – Dynamique atmosphérique & vents"),
-        place: "Polytechnique Montréal (BCI, Canada)",
+        title: B(
+          "Academic Exchange – Fluid Mechanics & Environmental Modeling",
+          "Échange universitaire – Mécanique des fluides & modélisation environnementale"
+        ),
+        place: "Polytechnique Montréal (Montréal, Canada)",
         roleModel: "Marc-Antoine Tremblay",
-        text: B("Completing an academic semester applying fluid mechanics and numerical wind modeling to catastrophic event prevention.",
-                "Réalisation d'un semestre académique appliquant la mécanique des fluides et la modélisation numérique des vents à la prévention des catastrophes.")
+        text: B(
+          "Potential exchange destination to deepen my knowledge of fluid mechanics, numerical simulation, environmental processes, and scientific computing in a French- and English-speaking international environment. I would like to investigate how these methods can support the study of extreme winds, storms, floods, and other natural hazards. The exchange agreement and relevant course availability must be confirmed with ENSEEIHT.",
+          "Piste d'échange pour approfondir mes connaissances en mécanique des fluides, simulation numérique, processus environnementaux et calcul scientifique dans un environnement international francophone et anglophone. Je souhaite étudier comment ces méthodes peuvent contribuer à l'analyse des vents extrêmes, des tempêtes, des inondations et d'autres aléas naturels. L'accord d'échange et la disponibilité des cours adaptés doivent être confirmés auprès de l'ENSEEIHT."
+        )
       }
     ]
   },
