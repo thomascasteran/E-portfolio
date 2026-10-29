@@ -32,7 +32,7 @@ window.DATA = {
         type: B("School Project", "Projet scolaire"),
         period: "2026",
         text: B("Conducted an applied physics research project during Prépa T² on solar energy conversion on Earth, combining lab experiments at IUT Mesures Physiques with a contextual case study on French Guiana.",
-               "Réalisation d'un projet d'étude en prépa T² sur l'exploitation de l'énergie solaire sur Terre, alliant travaux pratiques à l'IUT Mesures Physiques et étude de cas appliquée au projet Hyguane en Guyane."),
+                "Réalisation d'un projet d'étude en prépa T² sur l'exploitation de l'énergie solaire sur Terre, alliant travaux pratiques à l'IUT Mesures Physiques et étude de cas appliquée au projet Hyguane en Guyane."),
         result: B("Comprehensive LaTeX technical report evaluating solar yield efficiency and tropical micro-grid constraints.",
                   "Rapport technique sous LaTeX évaluant les rendements solaires et les contraintes d'intégration en milieu tropical."),
         learned: B("Experimental measurements, solar irradiance physics, and technical synthesis in LaTeX.",
@@ -42,7 +42,6 @@ window.DATA = {
         linkLabel: B("View project", "Voir le projet"),
         image: "assets/img/projet-solaire.jpg"
       }
-      /* Pour ajouter un projet : mets une virgule après le } ci-dessus, puis copie le bloc entier. */
     ]
   },
 
@@ -59,7 +58,6 @@ window.DATA = {
         period: B("August 2025 (2 weeks)", "Août 2025 (2 semaines)"),
         text: B("Language courses and cultural discovery in Ireland to refine fluency and autonomy in an English-speaking environment.",
                 "Cours de langues et immersion culturelle en Irlande pour perfectionner l'anglais et renforcer l'autonomie à l'étranger."),
-        // PHOTO : dépose ton image dans assets/img/ avec exactement ce nom (en minuscules, .jpg).
         photos: [
           { src: "assets/img/irlande-dublin.jpg", caption: B("Dublin", "Dublin") }
         ]
@@ -147,11 +145,8 @@ window.DATA = {
   /* ---------- 6. CAREER DEVELOPMENT ---------- */
   career: {
     cv: { en: "assets/cv/cv-en.pdf", fr: "assets/cv/cv-fr.pdf" },
-
-    /* Elevator pitch : remplace [COLLE_TON_ID_ICI] par l'ID de ta vidéo YouTube (non répertoriée).
-       Exemple : "https://youtu.be/AbC123xyz_0"  — tant qu'il reste un "[", l'encadré "Vidéo bientôt disponible" s'affiche. */
     video: "https://youtu.be/[COLLE_TON_ID_ICI]",
-    videoFile: "",   // OU un petit fichier : "assets/video/pitch.mp4"
+    videoFile: "",
 
     experiences: [
       {
@@ -167,9 +162,7 @@ window.DATA = {
           B("Accelerated data access for researchers conducting high-temperature material testing.", "Accélération de l'accès aux données pour les chercheurs analysant les matériaux à haute température.")
         ],
         tools: ["Python", "PyQt", "Pandas", "Qt Designer", "Git"],
-        // BOUTON RAPPORT : dépose ton PDF dans assets/docs/ avec ce nom. Le bouton apparaît tout seul une fois le fichier en ligne.
         report: "assets/docs/rapport-onera.pdf"
-        // Autres boutons possibles : links: [ { label: B("Poster", "Poster"), href: "assets/docs/poster.pdf" } ]
       },
       {
         title: B("Cadet of the Gendarmerie", "Cadet de la Gendarmerie"),
@@ -185,53 +178,60 @@ window.DATA = {
       }
     ],
 
-    /* 3 role models : remplace par de VRAIS profils (My Job Glasses, anciens, etc.) */
     roleModels: [
-      { name: "Role Model 1",   // ← À REMPLACER : Prénom NOM
-        job: B("Fluid Mechanics Specialist", "Spécialiste Mécanique des Fluides"), photo: "",
+      {
+        name: "Iris Mourier",
+        job: B("Catastrophe Risk & Reinsurance Analyst", "Analyste des risques de catastrophes & Réassurance"),
+        photo: "",
         points: [
-          B("Path: [school, first jobs, current role]", "Parcours : [école, premiers postes, poste actuel]"),   // ← À REMPLACER
-          B("Key skills: [2–3 skills]", "Compétences clés : [2–3 compétences]"),                              // ← À REMPLACER
-          B("What I take from it: [lesson]", "Ce que j'en retiens : [leçon]")                                 // ← À REMPLACER
-        ] },
-      { name: "Role Model 2",   // ← À REMPLACER
-        job: B("Renewable Energy Project Manager", "Chef de projet Énergies Renouvelables"), photo: "",
+          B("Path: Engineering school, fluid mechanics & applied math major, risk modeling specialist in Switzerland.", "Parcours : École d'ingénieur, spécialisation mécanique des fluides & mathématiques appliquées, experte en modélisation des risques en Suisse."),
+          B("Key skills: Numerical modeling, Python, extreme weather data analysis, risk management.", "Compétences clés : Modélisation numérique, Python, analyse de données météo-extrêmes, gestion des risques."),
+          B("What I take from it: Combining fluid physics and simulation with major economic and climate resilience issues.", "Ce que j'en retiens : Allier la physique des fluides et la simulation à des enjeux économiques majeurs face au changement climatique.")
+        ]
+      },
+      {
+        name: "Ingénieur R&D Énergies",
+        job: B("Renewable Energy R&D Engineer", "Ingénieur R&D en Énergies Renouvelables"),
+        photo: "",
         points: [
-          B("Path: [school, first jobs, current role]", "Parcours : [école, premiers postes, poste actuel]"),
-          B("Key skills: [2–3 skills]", "Compétences clés : [2–3 compétences]"),
-          B("What I take from it: [lesson]", "Ce que j'en retiens : [leçon]")
-        ] },
-      { name: "Role Model 3",   // ← À REMPLACER
-        job: B("Catastrophe Risk Analyst", "Analyste des risques climatiques"), photo: "",
+          B("Path: ENSEEIHT (MF2E), research internship (ONERA), international R&D in solar/wind systems.", "Parcours : ENSEEIHT (MF2E), stage de recherche en laboratoire (ONERA), R&D internationale en systèmes solaires et éoliens."),
+          B("Key skills: Thermal engineering, energy flow optimization, software prototyping (Python/Qt).", "Compétences clés : Ingénierie thermique, optimisation des flux d'énergie, prototypage logiciel (Python/Qt)."),
+          B("What I take from it: The importance of experimental innovation and software tools to optimize future energy systems.", "Ce que j'en retiens : L'importance de l'innovation expérimentale et des outils logiciels pour optimiser les systèmes énergétiques de demain.")
+        ]
+      },
+      {
+        name: "Spécialiste MetOcean",
+        job: B("MetOcean & Wind Modeling Engineer", "Ingénieur MetOcean & Modélisation des Vents"),
+        photo: "",
         points: [
-          B("Path: [school, first jobs, current role]", "Parcours : [école, premiers postes, poste actuel]"),
-          B("Key skills: [2–3 skills]", "Compétences clés : [2–3 compétences]"),
-          B("What I take from it: [lesson]", "Ce que j'en retiens : [leçon]")
-        ] }
+          B("Path: Dual competence in fluid mechanics and meteorology, wind profile modeling (Holland/IBTrACS).", "Parcours : Double compétence en mécanique des fluides et météorologie, modélisation de profils de vent (Holland/IBTrACS)."),
+          B("Key skills: Atmospheric dynamics, 2D/3D numerical modeling, big data processing.", "Compétences clés : Dynamique atmosphérique, modélisation numérique 2D/3D, traitement de données massives."),
+          B("What I take from it: Translating complex natural phenomena into predictive models to secure critical infrastructures.", "Ce que j'en retiens : Traduire des phénomènes naturels complexes en modèles prédictifs pour sécuriser les infrastructures.")
+        ]
+      }
     ],
 
-    /* 3 projets de mobilité, chacun aligné avec un role model (garde le même nom que ci-dessus) */
     mobilityProjects: [
       {
         title: B("Academic Exchange in Energetics", "Échange académique en énergétique"),
-        place: "[University, Country]",   // ← À REMPLACER
-        roleModel: "Role Model 1",
-        text: B("Completing a semester focused on advanced fluid dynamics and renewable energy modeling.",
-                "Réalisation d'un semestre axé sur la dynamique des fluides avancée et les énergies renouvelables.")
+        place: "UiT The Arctic University of Norway (Tromsø, Norvège)",
+        roleModel: "Iris Mourier",
+        text: B("Completing a semester focused on advanced fluid dynamics, environmental science, and renewable energy modeling.",
+                "Réalisation d'un semestre axé sur la dynamique des fluides avancée, la science environnementale et la modélisation des énergies renouvelables.")
       },
       {
         title: B("International R&D Internship", "Stage R&D à l'international"),
-        place: "[Company or lab, Country]",   // ← À REMPLACER
-        roleModel: "Role Model 2",
-        text: B("Engineering internship working on fluid/thermal optimization and clean energy systems.",
-                "Stage ingénieur travaillant sur l'optimisation thermo-fluide et les systèmes d'énergie propre.")
+        place: "Uppsala University (Uppsala, Suède)",
+        roleModel: "Ingénieur R&D Énergies",
+        text: B("Engineering internship working on fluid/thermal optimization, solar energy, and clean energy systems.",
+                "Stage ingénieur travaillant sur l'optimisation thermo-fluide, l'énergie solaire et les systèmes d'énergie propre.")
       },
       {
         title: B("Climate Risk & Wind Modeling Mission", "Mission modélisation des risques climatiques"),
-        place: "[Agency or lab, Country]",   // ← À REMPLACER
-        roleModel: "Role Model 3",
-        text: B("Applying numerical wind field modeling to catastrophic event prevention.",
-                "Application de la modélisation numérique des champs de vent à la prévention des catastrophes.")
+        place: "Polytechnique Montréal (BCI, Canada)",
+        roleModel: "Spécialiste MetOcean",
+        text: B("Applying numerical wind field modeling and fluid mechanics to catastrophic event prevention and environmental engineering.",
+                "Application de la modélisation numérique des champs de vent et de la mécanique des fluides à la prévention des catastrophes et à l'ingénierie environnementale.")
       }
     ]
   },
@@ -239,7 +239,7 @@ window.DATA = {
   /* ---------- CONTACT ---------- */
   contact: {
     email: "thomas.casteran@etu.toulouse-inp.fr",
-    phone: "+33 6 28 23 61 79",   // site public : pour masquer ton numéro, mets "" ici
+    phone: "+33 6 28 23 61 79",
     linkedin: "https://www.linkedin.com/in/thomas-casteran"
   }
 };
