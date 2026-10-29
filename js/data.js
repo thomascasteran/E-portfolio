@@ -232,7 +232,7 @@ window.DATA = {
           "Échange universitaire – Sciences du climat & analyse de données"
         ),
         place: "University of Connecticut (UConn, USA)",
-        roleModel: "Iris Mourier",
+        roleModel: "David Lindqvist",
         text: B(
           "Potential exchange destination to develop my knowledge of climate science, statistics, environmental processes, and scientific data analysis. My goal is to build skills that could later be applied to modeling the frequency and intensity of extreme events and assessing their potential impacts.",
           "Piste d'échange pour approfondir mes connaissances en sciences du climat, statistiques, processus environnementaux et analyse de données scientifiques. Mon objectif est d'acquérir des compétences qui pourraient ensuite être appliquées à la modélisation de la fréquence et de l'intensité des événements extrêmes et à l'évaluation de leurs impacts potentiels."
@@ -245,7 +245,7 @@ window.DATA = {
           "Échange universitaire – Climat & modélisation des catastrophes"
         ),
         place: "Georgia Institute of Technology (Georgia Tech, Atlanta, USA)",
-        roleModel: "Iris Mourier",
+        roleModel: "Marc-Antoine Tremblay",
         text: B(
           "Potential exchange destination to strengthen my foundations in numerical modeling, fluid dynamics, atmospheric sciences, and data analysis. I would like to explore how physical simulations and climate data can contribute to understanding extreme weather events and natural hazards.",
           "Piste d'échange pour renforcer mes bases en modélisation numérique, dynamique des fluides, sciences de l'atmosphère et analyse de données. Je souhaite explorer comment les simulations physiques et les données climatiques permettent de mieux comprendre les événements météorologiques extrêmes et les aléas naturels. "
