@@ -239,14 +239,14 @@ window.DATA = {
       },
       {
         title: B(
-          "Academic Exchange – Fluid Mechanics & Environmental Modeling",
-          "Échange universitaire – Mécanique des fluides & modélisation environnementale"
+          "Academic Exchange – Climate Science & Catastrophe Modeling",
+          "Échange universitaire – Sciences du climat & modélisation des catastrophes"
         ),
-        place: "Polytechnique Montréal (Montréal, Canada)",
-        roleModel: "Marc-Antoine Tremblay",
+        place: "Imperial College London (London, United Kingdom)",
+        roleModel: "Iris Mourier",
         text: B(
-          "Potential exchange destination to deepen my knowledge of fluid mechanics, numerical simulation, environmental processes, and scientific computing in a French- and English-speaking international environment. I would like to investigate how these methods can support the study of extreme winds, storms, floods, and other natural hazards. ",
-          "Piste d'échange pour approfondir mes connaissances en mécanique des fluides, simulation numérique, processus environnementaux et calcul scientifique dans un environnement international francophone et anglophone. Je souhaite étudier comment ces méthodes peuvent contribuer à l'analyse des vents extrêmes, des tempêtes, des inondations et d'autres aléas naturels."
+          "Potential exchange destination to strengthen my knowledge of numerical modeling, applied mathematics, climate science, and extreme weather events. I am particularly interested in understanding how physical models and scientific data can be used to assess natural hazards and contribute to catastrophe risk modeling in the insurance and reinsurance sectors.",
+          "Piste d'échange pour approfondir mes connaissances en modélisation numérique, mathématiques appliquées, sciences du climat et événements météorologiques extrêmes. Je m'intéresse particulièrement à la manière dont les modèles physiques et les données scientifiques peuvent être utilisés pour évaluer les aléas naturels et contribuer à la modélisation des risques de catastrophes dans les secteurs de l'assurance et de la réassurance."
         )
       }
     ]
