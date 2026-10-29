@@ -211,6 +211,7 @@ window.DATA = {
       }
     ],
 
+
     /* ---------- MOBILITY PROJECTS — UPDATED ---------- */
     mobilityProjects: [
       {
@@ -224,8 +225,7 @@ window.DATA = {
           "Potential exchange destination to strengthen my knowledge of numerical modeling, applied mathematics, climate science, and extreme weather events. I am particularly interested in understanding how physical models and scientific data can be used to assess natural hazards and contribute to catastrophe risk modeling in the insurance and reinsurance sectors.",
           "Piste d'échange pour approfondir mes connaissances en modélisation numérique, mathématiques appliquées, sciences du climat et événements météorologiques extrêmes. Je m'intéresse particulièrement à la manière dont les modèles physiques et les données scientifiques peuvent être utilisés pour évaluer les aléas naturels et contribuer à la modélisation des risques de catastrophes dans les secteurs de l'assurance et de la réassurance."
         )
-      }
-     
+      },
       {
         title: B(
           "Academic Exchange – Climate Science & Data Analysis",
@@ -238,8 +238,7 @@ window.DATA = {
           "Piste d'échange pour approfondir mes connaissances en sciences du climat, statistiques, processus environnementaux et analyse de données scientifiques. Mon objectif est d'acquérir des compétences qui pourraient ensuite être appliquées à la modélisation de la fréquence et de l'intensité des événements extrêmes et à l'évaluation de leurs impacts potentiels."
         )
       },
-        {
-         
+      {
         title: B(
           "Academic Exchange – Climate & Catastrophe Modeling",
           "Échange universitaire – Climat & modélisation des catastrophes"
@@ -248,12 +247,11 @@ window.DATA = {
         roleModel: "Marc-Antoine Tremblay",
         text: B(
           "Potential exchange destination to strengthen my foundations in numerical modeling, fluid dynamics, atmospheric sciences, and data analysis. I would like to explore how physical simulations and climate data can contribute to understanding extreme weather events and natural hazards.",
-          "Piste d'échange pour renforcer mes bases en modélisation numérique, dynamique des fluides, sciences de l'atmosphère et analyse de données. Je souhaite explorer comment les simulations physiques et les données climatiques permettent de mieux comprendre les événements météorologiques extrêmes et les aléas naturels. "
+          "Piste d'échange pour renforcer mes bases en modélisation numérique, dynamique des fluides, sciences de l'atmosphère et analyse de données. Je souhaite explorer comment les simulations physiques et les données climatiques permettent de mieux comprendre les événements météorologiques extrêmes et les aléas naturels."
         )
       }
-
     ]
-  },
+
 
   /* ---------- CONTACT ---------- */
   contact: {
