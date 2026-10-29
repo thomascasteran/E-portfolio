@@ -158,7 +158,7 @@ window.DATA = {
         title: B("Materials Engineering & Data GUI Intern", "Stagiaire création d'interface & matériaux"),
         org: "ONERA (DMPE), Toulouse",
         period: B("May – June 2025", "Mai – Juin 2025"),
-        logo: "",
+        logo: "assets/img/Onera-bloc-marque.jpg",
         text: B("Within the DMPE department at ONERA, I designed and developed a custom graphical desktop interface to centralize, query, and visualize laboratory materials data.",
                 "Au sein du département DMPE de l'ONERA, j'ai conçu et développé une interface graphique sur mesure pour centraliser, consulter et visualiser les données matériaux du laboratoire."),
         bullets: [
