@@ -13,8 +13,8 @@ window.DATA = {
     name: "Thomas Casteran",
 
     pitch: B(
-      "Engineering student in Fluid Mechanics, Energetics & Environment (MF2E) at ENSEEIHT, passionate about physical modeling, music, and climate challenges.",
-      "Élève ingénieur en Mécanique des fluides, Énergétique et Environnement (MF2E) à l'ENSEEIHT, passionné par la modélisation physique, la musique et les défis climatiques."
+      "Engineering student in Fluid Mechanics, Energetics & Environment (MF2E) at ENSEEIHT, passionate about physical modeling, music, and climate.",
+      "Élève ingénieur en Mécanique des fluides, Énergétique et Environnement (MF2E) à l'ENSEEIHT, passionné par la modélisation physique, la musique et le climat."
     ),
 
     highlights: [
@@ -308,8 +308,8 @@ window.DATA = {
     experiences: [
       {
         title: B(
-          "Materials Engineering & Data GUI Intern",
-          "Stagiaire création d'interface & matériaux"
+          "Intern in interface creation for materials",
+          "Stagiaire création d'interface pour des matériaux"
         ),
 
         org: "ONERA (DMPE), Toulouse",
