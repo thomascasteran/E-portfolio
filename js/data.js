@@ -22,7 +22,7 @@ window.DATA = {
       B("ENSEEIHT, Toulouse", "ENSEEIHT, Toulouse")
     ],
 
-    photo: "assets/img/photo.jpg",
+    photo: "assets/img/photo1.jpg",
     linkedin: "https://www.linkedin.com/in/thomas-casteran",
     github: "https://github.com/thomascasteran"
   },
