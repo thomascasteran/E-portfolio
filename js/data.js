@@ -212,6 +212,48 @@ window.DATA = {
           "Participation active aux ateliers sur la citoyenneté, la défense et la mémoire. Développement de la cohésion d'équipe et du sens de l'engagement."
         )
       ]
+    },
+
+    {
+      title: B(
+        "Climate Fresk",
+        "Fresque du Climat"
+      ),
+
+      text: [
+        B(
+          "From the first year of my engineering program, I took part in a \"Climate Fresk\" workshop alongside other ENSEEIHT students. It made us aware of the climate challenges of our time and of the issues we will face as future engineers.",
+          "Dès la première année de mon cursus ingénieur, j'ai participé à un atelier « Fresque du Climat » avec d'autres élèves de l'ENSEEIHT. Il nous a sensibilisés aux défis climatiques de notre époque et aux enjeux auxquels nous serons confrontés en tant que futurs ingénieurs."
+        )
+      ]
+    },
+
+    {
+      title: B(
+        "The Trial of King Kong",
+        "Le Procès de King Kong"
+      ),
+
+      text: [
+        B(
+          "Also in my first year of engineering school, I attended and took part in the interactive play \"The Trial of King Kong\", which addresses gender-based and sexual violence and its consequences.",
+          "Toujours en première année d'école d'ingénieur, j'ai assisté et participé à la pièce interactive « Le Procès de King Kong », qui aborde les violences sexistes et sexuelles (VSS) et leurs conséquences."
+        )
+      ]
+    },
+
+    {
+      title: B(
+        "\"Futur Proche\" Festival",
+        "Festival « Futur Proche »"
+      ),
+
+      text: [
+        B(
+          "ENSEEIHT and the universities of Toulouse gave me the opportunity to take part in the \"Futur Proche\" (Near Future) festival, with many conferences, workshops and presentations raising awareness about climate issues, particularly from a scientific perspective through innovations that already exist or are in development.",
+          "L'ENSEEIHT et les universités de Toulouse m'ont permis de participer au festival « Futur Proche », qui proposait de nombreuses conférences, ateliers et présentations sensibilisant aux enjeux climatiques, notamment sous un angle scientifique, à travers des innovations existantes ou en cours de développement."
+        )
+      ]
     }
   ],
 
