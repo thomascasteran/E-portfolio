@@ -566,7 +566,7 @@ window.DATA = {
   contact: {
     email: "thomas.casteran@etu.toulouse-inp.fr",
     phone: "+33 6 28 23 61 79",
-    linkedin: "https://www.linkedin.com/in/thomas-casteran"
+    linkedin: "https://www.linkedin.com/in/thomas-casteran-571561439/"
   }
 };
 
