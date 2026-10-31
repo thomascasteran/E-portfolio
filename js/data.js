@@ -108,10 +108,6 @@ window.DATA = {
       {
         name: B("German", "Allemand"),
         level: "A2-B1"
-      },
-      {
-        name: B("Spanish", "Espagnol"),
-        level: "A1"
       }
     ],
 
