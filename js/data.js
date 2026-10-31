@@ -22,7 +22,7 @@ window.DATA = {
     ],
 
     photo: "assets/img/photo1.jpg",
-    linkedin: "www.linkedin.com/in/thomas-casteran-571561439",
+    linkedin: "https://www.linkedin.com/in/thomas-casteran-571561439",
     
   },
 
