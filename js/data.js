@@ -13,7 +13,7 @@ window.DATA = {
 
     pitch: B(
       "Engineering student in Fluid Mechanics, Energetics & Environment (MF2E) at ENSEEIHT, passionate about physical modeling, music, and climate.",
-      "Élève ingénieur en Mécanique des fluides, Énergétique et Environnement (MF2E) à l'ENSEEIHT, passionné par la modélisation physique, la musique et le climat."
+      "Élève ingénieur en mécanique des fluides, Énergétique et Environnement (MF2E) à l'ENSEEIHT, passionné par la modélisation physique, la musique et le climat."
     ),
 
     highlights: [
