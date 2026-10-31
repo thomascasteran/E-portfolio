@@ -23,7 +23,7 @@ window.DATA = {
 
     photo: "assets/img/photo1.jpg",
     linkedin: "https://www.linkedin.com/in/thomas-casteran",
-    github: "https://github.com/thomascasteran"
+    
   },
 
   /* ---------- 2. ENGINEERING COURSE ---------- */
