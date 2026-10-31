@@ -513,8 +513,8 @@ window.DATA = {
 
     /* ---------- MOBILITY INTRO (phrase affichée avant les projets de mobilité) ---------- */
     mobilityIntro: B(
-      "After my language immersions in Ireland, Malta and England, I want to go further by spending a semester abroad in an English-speaking country. Beyond the academic goal (advanced fluid mechanics, climate modeling and catastrophe risk), I want to discover a new culture, practice English every day and gain independence. Here are the exchange options I am considering, each linked to a professional role model who inspires me.",
-      "Après mes immersions linguistiques en Irlande, à Malte et en Angleterre, je souhaite aller plus loin en réalisant un semestre à l'étranger dans un pays anglophone. Au-delà de l'objectif académique (mécanique des fluides avancée, modélisation du climat et des risques de catastrophes), je veux découvrir une nouvelle culture, pratiquer l'anglais au quotidien et gagner en autonomie. Voici les pistes d'échange que j'envisage, chacune associée à un modèle professionnel qui m'inspire."
+      "Beyond the academic goal (advanced fluid mechanics, climate modeling and catastrophe risk), I want to discover a new culture, practice English every day and gain independence. Here are the exchange options I am considering, each linked to a professional role model who inspires me.",
+      "Au-delà de l'objectif académique (mécanique des fluides avancée, modélisation du climat et des risques de catastrophes), je veux découvrir une nouvelle culture, pratiquer l'anglais au quotidien et gagner en autonomie. Voici les pistes d'échange que j'envisage, chacune associée à un modèle professionnel qui m'inspire."
     ),
 
     /* ---------- MOBILITY PROJECTS ---------- */
