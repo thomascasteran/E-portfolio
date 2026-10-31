@@ -111,7 +111,20 @@
 
     // Attention : el() ignore les attributs vides (""), donc on écrit controls="controls", etc.
     let media;
-    if (c.videoFile) media = el("div", { class: "video" }, el("video", { src: c.videoFile, controls: "controls", preload: "metadata", playsinline: "playsinline" }));
+    if (c.videoFile) {
+      const vid = el("video", { src: c.videoFile, controls: "controls", preload: "metadata", playsinline: "playsinline" });
+      media = el("div", { class: "video" }, vid);
+      // Diagnostic : si la vidéo échoue, on affiche la vraie cause sous le lecteur
+      vid.addEventListener("error", () => {
+        const note = el("p", { class: "video-error" }, "Vidéo non chargée : " + c.videoFile);
+        media.after(note);
+        fetch(c.videoFile, { method: "HEAD" }).then((r) => {
+          note.textContent = r.ok
+            ? "Le fichier existe (" + c.videoFile + ") mais le navigateur ne peut pas le lire : format/codec à convertir en H.264 + AAC."
+            : "Fichier introuvable (erreur " + r.status + ") : " + c.videoFile;
+        }).catch(() => {});
+      }, { once: true });
+    }
     else if (c.video && !c.video.includes("[")) media = el("div", { class: "video" }, el("iframe", { src: embed(c.video), title: "Elevator pitch", allowfullscreen: "allowfullscreen", loading: "lazy" }));
     else media = el("div", { class: "video vidph" }, [el("strong", {}, u("videoSoon")), el("span", {}, u("videoSoonSub"))]);
 
