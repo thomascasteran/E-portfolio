@@ -8,8 +8,8 @@
       engineeringSub: "Projects and skills from my engineering course.", mobilitySub: "Languages and international aspirations.",
       engagementSub: "Sustainability, community and civic involvement.", activitiesSub: "Sport and passions outside engineering.",
       careerSub: "Professional documents, goals and sources of inspiration.", contactSub: "Get in touch for an internship, a project or a simple chat.",
-      skills: "Skills", projects: "Projects", experiences: "Experiences", mobGoal: "Mobility project", cvEn: "Download CV (English)",
-      cvFr: "Download CV (French)", linkedin: "My LinkedIn profile", pastExp: "Past experience", roleModels: "Role models",
+      skills: "Skills", projects: "Projects", experiences: "Stays abroad", mobGoal: "Mobility project", cvEn: "Download CV (English)",
+      cvFr: "Download CV (French)", linkedin: "My LinkedIn profile", pastExp: "Professional experience", roleModels: "Role models",
       roleModelsSub: "Analysis of 3 inspiring profiles and 3 potential mobility projects.", mobProjects: "Potential mobility projects",
       aligned: "Aligned with", pitch: "Elevator pitch", pitchSub: "2–3 minutes in English: present, brief past, future.",
       result: "Result", learned: "What I learned", email: "Email", phone: "Phone", portrait: "Portrait of ", docs: "Documents", pPresent: "Present", pPast: "Brief past", pFuture: "Future", videoSoon: "Video coming soon", videoSoonSub: "My 2–3 minute elevator pitch will appear here.", report: "Internship report (PDF)", close: "Close", prev: "Previous", next: "Next" },
@@ -18,8 +18,8 @@
       engineeringSub: "Projets et compétences de mon cursus ingénieur.", mobilitySub: "Langues et aspirations à l'international.",
       engagementSub: "Développement durable, vie associative et citoyenne.", activitiesSub: "Sport et passions en dehors de l'ingénierie.",
       careerSub: "Documents professionnels, objectifs et sources d'inspiration.", contactSub: "Écris-moi pour un stage, un projet ou un simple échange.",
-      skills: "Compétences", projects: "Projets", experiences: "Expériences", mobGoal: "Projet de mobilité", cvEn: "Télécharger le CV (anglais)",
-      cvFr: "Télécharger le CV (français)", linkedin: "Mon profil LinkedIn", pastExp: "Expériences passées", roleModels: "Modèles inspirants",
+      skills: "Compétences", projects: "Projets", experiences: "Séjours à l'étranger", mobGoal: "Projet de mobilité", cvEn: "Télécharger le CV (anglais)",
+      cvFr: "Télécharger le CV (français)", linkedin: "Mon profil LinkedIn", pastExp: "Expériences professionnelles", roleModels: "Modèles inspirants",
       roleModelsSub: "Analyse de 3 profils inspirants et de 3 projets de mobilité potentiels.", mobProjects: "Projets de mobilité potentiels",
       aligned: "Aligné avec", pitch: "Elevator pitch", pitchSub: "2–3 minutes en anglais : présent, passé très bref, futur.",
       result: "Résultat", learned: "Ce que j'ai appris", email: "E-mail", phone: "Téléphone", portrait: "Portrait de ", docs: "Documents", pPresent: "Présent", pPast: "Passé (bref)", pFuture: "Futur", videoSoon: "Vidéo bientôt disponible", videoSoonSub: "Mon elevator pitch de 2 à 3 minutes apparaîtra ici.", report: "Rapport de stage (PDF)", close: "Fermer", prev: "Précédente", next: "Suivante" }
@@ -104,33 +104,40 @@
 
     body("mobility-body", [head("mobility"),
       grid("langs", m.languages.map((l) => el("span", { class: "chip" }, [el("strong", {}, t(l.name)), " " + t(l.level)]))),
-      sub(u("experiences")), ...m.experiences.map((x) => card([el("h4", {}, t(x.title)), el("p", { class: "meta" }, t(x.period)), ...paras(x.text), gallery(x.photos)], "card xpcard")),
-      sub(u("mobGoal")), grid("prose", paras(m.text))]);
+      sub(u("experiences")), ...m.experiences.map((x) => card([el("h4", {}, t(x.title)), el("p", { class: "meta" }, t(x.period)), ...paras(x.text), gallery(x.photos)], "card xpcard"))]);
 
     body("engagement-body", [head("engagement"), grid("grid2", D.engagement.map(item))]);
     body("activities-body", [head("activities"), ...D.activities.map((g) => [sub(t(g.category)), grid("grid2", g.items.map(item))])]);
 
+    // Attention : el() ignore les attributs vides (""), donc on écrit controls="controls", etc.
     let media;
-    if (c.videoFile) media = el("div", { class: "video" }, el("video", { src: c.videoFile, controls: "", preload: "metadata", playsinline: "" }));
-    else if (c.video && !c.video.includes("[")) media = el("div", { class: "video" }, el("iframe", { src: embed(c.video), title: "Elevator pitch", allowfullscreen: "", loading: "lazy" }));
+    if (c.videoFile) media = el("div", { class: "video" }, el("video", { src: c.videoFile, controls: "controls", preload: "metadata", playsinline: "playsinline" }));
+    else if (c.video && !c.video.includes("[")) media = el("div", { class: "video" }, el("iframe", { src: embed(c.video), title: "Elevator pitch", allowfullscreen: "allowfullscreen", loading: "lazy" }));
     else media = el("div", { class: "video vidph" }, [el("strong", {}, u("videoSoon")), el("span", {}, u("videoSoonSub"))]);
 
     body("career-body", [head("career"),
       sub(u("docs")),
       el("p", { class: "cta" }, [a(c.cv.en, u("cvEn"), "btn solid"), a(c.cv.fr, u("cvFr"), "btn sky"), a(p.linkedin, u("linkedin"), "btn")]),
       sub(u("pitch")), el("p", { class: "sub tight" }, u("pitchSub")), tags([u("pPresent"), u("pPast"), u("pFuture")]), media,
-      sub(u("roleModels")), el("p", { class: "sub tight" }, u("roleModelsSub")),
-      grid("grid3", c.roleModels.map((r) => card([
-        r.photo ? el("img", { src: r.photo, alt: r.name, class: "avatar-sm" }) : el("span", { class: "avatar-sm ph" }, initials(r.name)),
-        el("h4", { class: "center" }, r.name), el("p", { class: "meta center" }, t(r.job)), list(r.points)]))),
-      sub(u("mobProjects")),
-      grid("grid3", c.mobilityProjects.map((x) => card([el("h4", {}, t(x.title)), el("p", { class: "meta" }, t(x.place)),
-        x.roleModel ? el("p", {}, [el("strong", {}, u("aligned") + ": "), x.roleModel]) : null, ...paras(x.text)]))),
+
+      // 1. Passé : expériences professionnelles
       sub(u("pastExp")),
       ...c.experiences.map((x) => card([el("div", { class: "xp" }, [
         x.logo ? el("img", { src: x.logo, alt: "", class: "logo-img" }) : el("span", { class: "logo-img ph" }, initials(x.org || t(x.title))),
         el("div", {}, [el("div", { class: "xp-top" }, [el("h4", {}, t(x.title)), el("span", { class: "meta" }, t(x.period))]),
-          el("p", { class: "org" }, t(x.org)), ...paras(x.text), list(x.bullets), tags(x.tools), actions(x), gallery(x.photos)])])], "card xpcard"))]);
+          el("p", { class: "org" }, t(x.org)), ...paras(x.text), list(x.bullets), tags(x.tools), actions(x), gallery(x.photos)])])], "card xpcard")),
+
+      // 2. Inspirations : modèles professionnels
+      sub(u("roleModels")), el("p", { class: "sub tight" }, u("roleModelsSub")),
+      grid("grid3", c.roleModels.map((r) => card([
+        r.photo ? el("img", { src: r.photo, alt: r.name, class: "avatar-sm" }) : el("span", { class: "avatar-sm ph" }, initials(r.name)),
+        el("h4", { class: "center" }, r.name), el("p", { class: "meta center" }, t(r.job)), list(r.points)]))),
+
+      // 3. Futur : phrase d'intro + projets de mobilité
+      sub(u("mobProjects")),
+      c.mobilityIntro ? grid("prose", paras(c.mobilityIntro)) : null,
+      grid("grid3", c.mobilityProjects.map((x) => card([el("h4", {}, t(x.title)), el("p", { class: "meta" }, t(x.place)),
+        x.roleModel ? el("p", {}, [el("strong", {}, u("aligned") + ": "), x.roleModel]) : null, ...paras(x.text)])))]);
 
     body("contact-body", [head("contact"), grid("grid3", [
       card([el("h4", {}, u("email")), el("p", {}, a("mailto:" + k.email, k.email))], "item"),
