@@ -345,7 +345,7 @@ window.DATA = {
     // Remplace cette valeur par le vrai lien de ta vidéo YouTube.
     // Laisse une chaîne vide si tu ne souhaites pas afficher de vidéo.
     video: "",
-    videoFile: "assets/img/30 octobre 2026.mp4",
+    videoFile: "assets/img/présentation.mp4",
 
     experiences: [
       {
