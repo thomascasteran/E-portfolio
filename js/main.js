@@ -86,7 +86,7 @@
     const [first, ...rest] = p.name.split(" ");
     $("name").replaceChildren(el("span", {}, first), el("span", {}, rest.join(" ")));
     $("highlights").replaceChildren(...p.highlights.map((h) => el("li", {}, t(h))));
-    $("links").replaceChildren(a(c.cv[lang], u(lang === "fr" ? "cvFr" : "cvEn"), "btn solid"), a(p.linkedin, "LinkedIn", "btn");
+    $("links").replaceChildren(a(c.cv[lang], u(lang === "fr" ? "cvFr" : "cvEn"), "btn solid"), a(p.linkedin, "LinkedIn", "btn"));
     const img = el("img", { src: p.photo, alt: u("portrait") + p.name, class: "photo" });
     img.onerror = () => $("photo-wrap").replaceChildren(el("div", { class: "photo avatar", "aria-hidden": "true" }, initials(p.name)));
     $("photo-wrap").replaceChildren(img);
