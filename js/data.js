@@ -329,8 +329,8 @@ window.DATA = {
   /* ---------- 6. CAREER DEVELOPMENT ---------- */
   career: {
     cv: {
-      en: "assets/cv/cv-en.pdf",
-      fr: "assets/cv/cv-fr.pdf"
+      en: "assets/CV_FR1.pdf",
+      fr: "assets/CV_ENG.pdf"
     },
 
     video: "",
