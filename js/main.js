@@ -118,7 +118,7 @@
     body("career-body", [head("career"),
       sub(u("docs")),
       el("p", { class: "cta" }, [a(c.cv.en, u("cvEn"), "btn solid"), a(c.cv.fr, u("cvFr"), "btn sky"), a(p.linkedin, u("linkedin"), "btn")]),
-      sub(u("pitch")), el("p", { class: "sub tight" }, u("pitchSub")), tags([u("pPresent"), u("pPast"), u("pFuture")]), media,
+      sub(u("pitch")), media,
 
       // 1. Passé : expériences professionnelles
       sub(u("pastExp")),
