@@ -1,4 +1,3 @@
-
 /* ============================================================
    TES DONNÉES — modifie uniquement cette partie.
    B("English", "Français") = texte affiché dans la langue choisie.
@@ -190,12 +189,8 @@ window.DATA = {
       }
     ],
 
-    text: [
-      B(
-        "My goal is to complete an academic semester focusing on advanced fluid mechanics, renewable energy systems, or computational climate modeling.",
-        "Mon objectif est de réaliser un semestre académique axé sur la mécanique des fluides avancée, les énergies renouvelables ou la modélisation numérique des risques climatiques."
-      )
-    ]
+    // Phrase déplacée : elle est maintenant dans career.mobilityIntro
+    text: []
   },
 
   /* ---------- 4. SUSTAINABILITY & CIVIC ENGAGEMENT ---------- */
@@ -342,10 +337,8 @@ window.DATA = {
       fr: "assets/cv/cv-fr.pdf"
     },
 
-    // Remplace cette valeur par le vrai lien de ta vidéo YouTube.
-    // Laisse une chaîne vide si tu ne souhaites pas afficher de vidéo.
     video: "",
-    videoFile: "assets/img/présentation.mp4",
+    videoFile: "assets/img/presentation.mp4",
 
     experiences: [
       {
@@ -517,6 +510,12 @@ window.DATA = {
         ]
       }
     ],
+
+    /* ---------- MOBILITY INTRO (phrase affichée avant les projets de mobilité) ---------- */
+    mobilityIntro: B(
+      "After my language immersions in Ireland, Malta and England, I want to go further by spending a semester abroad in an English-speaking country. Beyond the academic goal (advanced fluid mechanics, climate modeling and catastrophe risk), I want to discover a new culture, practice English every day and gain independence. Here are the exchange options I am considering, each linked to a professional role model who inspires me.",
+      "Après mes immersions linguistiques en Irlande, à Malte et en Angleterre, je souhaite aller plus loin en réalisant un semestre à l'étranger dans un pays anglophone. Au-delà de l'objectif académique (mécanique des fluides avancée, modélisation du climat et des risques de catastrophes), je veux découvrir une nouvelle culture, pratiquer l'anglais au quotidien et gagner en autonomie. Voici les pistes d'échange que j'envisage, chacune associée à un modèle professionnel qui m'inspire."
+    ),
 
     /* ---------- MOBILITY PROJECTS ---------- */
     mobilityProjects: [
